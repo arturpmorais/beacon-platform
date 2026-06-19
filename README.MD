@@ -1,0 +1,1 @@
+this is a mono-repo distributed notification service built with Java and Spring Boot, using Kafka as a message broker and PostgreSQL for the database, delivering multi-channel alerts via channels such as email, SMS and push notifications. 
