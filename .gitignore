@@ -1,0 +1,126 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.backup
+release.properties
+dependency-reduced-pom.xml
+.flattened-pom.xml
+*.jar
+*.war
+*.ear
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.jshintrc
+*.sublime-project
+
+# IDE - VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IDE - IntelliJ
+*.iml
+*.iws
+*.ipr
+out/
+
+# Gradle
+.gradle/
+build/
+gradle-wrapper.jar
+.gradletasknamecache
+
+# Node (if needed)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+application-local.yml
+application-dev.yml
+
+# Logs
+logs/
+*.log
+*.log.*
+log.txt
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# OS-specific
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Build directories
+out/
+dist/
+build/
+classes/
+bin/
+
+# Package managers
+.npm
+.yarn
+pnpm-lock.yaml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+
+# Editor temporary files
+.viminfo
+.vim/
+
+# SonarQube
+.sonarqube/
+.scannerwork/
+
+# Coverage reports
+coverage/
+lcov-report/
+htmlcov/
+
+# Kotlin
+.kotlin/
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# Windows
+.TemporaryItems
+Thumbs.db
