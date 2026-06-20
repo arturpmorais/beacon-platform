@@ -1,0 +1,42 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: email-worker
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:29092}
+    consumer:
+      group-id: email-worker-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.notifplatform.*"
+        spring.json.value.default.type: com.notifplatform.emailworker.dto.NotificationEvent
+        # manual ack: only commit offset after successful processing
+        enable.auto.commit: false
+    listener:
+      ack-mode: MANUAL_IMMEDIATE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+services:
+  user-service:
+    url: ${USER_SERVICE_URL:http://localhost:8081}
+  audit-service:
+    url: ${AUDIT_SERVICE_URL:http://localhost:8087}
+
+kafka:
+  topics:
+    email: notifications.email
+    dlq: notifications.dlq
+
+# mock mode: set to true to skip real email provider calls during local dev
+email:
+  mock: ${EMAIL_MOCK:true}
+  from: noreply@beaconplatform.com
