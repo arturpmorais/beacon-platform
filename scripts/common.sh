@@ -6,6 +6,7 @@ LOG_DIR="$ROOT_DIR/logs"
 SERVICES=(
   "user-service"
   "notification-service"
+  "audit-service"
   "email-worker"
   "api-gateway"
 )
