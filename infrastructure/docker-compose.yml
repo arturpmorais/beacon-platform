@@ -78,7 +78,6 @@ services:
       - notification-net
 
   # one database, schemas are separated by service
-  
   postgres:
     image: postgres:16-alpine
     container_name: postgres
@@ -95,6 +94,19 @@ services:
       - notification-net
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U notif_admin -d notification_platform"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - notification-net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5

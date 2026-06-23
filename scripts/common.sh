@@ -7,4 +7,5 @@ SERVICES=(
   "user-service"
   "notification-service"
   "email-worker"
+  "api-gateway"
 )
